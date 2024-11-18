@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Регистрация пользователя</title>
+    <link rel="stylesheet" href="3.css" />
+</head>
+
+<body onload="controll()">
+    <h2>Введите свои данные</h2>
+    <fieldset>
+        <form action="show_user.php" method="POST" enctype="multipart/form-data">
+            <table id="form">
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="username">Имя пользователя:</label></td>
+                    <td><input type="text" name="username" required></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="hint">От 3 до 20 символов: цифр, английских букв и знака _</td>
+                </tr>
+
+                <tr>
+                    <td><label for="user_pic">Изображение профиля:</label></td>
+                    <td><input type="file" name="user_pic" accept=".jpeg, .jpg, .bmp"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="hint">Выберите изображение в формате jpeg или bmp размером не более 2 Мб</td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">e-mail:</label></td>
+                    <td><input type="email" name="email" required></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><label for="password">Пароль:</label></td>
+                    <td><input type="password" name="password" required></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="hint">От 6 до 20 символов, обязательно одна заглавная и строчная
+                        английская буква, одна цифра и один спец. символ. Русские буквы не допускаются</td>
+                </tr>
+
+                <tr>
+                    <td>Повторите пароль:</td>
+                    <td><input type="password" size="20" name="password_repeat" required></td>
+                    <td></td>
+                </tr>
+            </table>
+    </fieldset>
+
+    <br>
+    <table>
+        <tr>
+            <td class="button">
+                <input type="submit" value="Зарегистрироваться" id="submit" class="button">
+            </td>
+            <td class="button">
+                <input type="reset" value="Очистить" class="button">
+            </td>
+        </tr>
+    </table>
+    </form>
+
+    <br><br>
+    <script src="3.js"></script>
+</body>
+</html>

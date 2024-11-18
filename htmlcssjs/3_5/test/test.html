@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Данные пользователя</title>
+    <link rel="stylesheet" href="stil.css" />
+</head>
+
+<body>
+    <?php 
+        // Получаем данные пользователя из POST-запроса
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password']; 
+    ?> 
+
+    <table class="head"> 
+        <tr>
+            <td rowspan="2">Здесь будет ваше изображение</td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Добро пожаловать, <strong><?php echo $username . ' ' .  ?></strong></p>
+                <?php echo '<a href="unautoriz.php"><strong>Выйти из приложения</strong></a> 
+                <p>Ваши регистрационные данные:</p><br>
+
+                <!-- Проверка на подтверждение адреса электронной почты -->
+                <?php 
+                    $check = 0; // Переменная, которая отвечает за подтверждение
+                    if ($check != 1) { 
+                        echo "<p class='error'>Адрес электронной почты не подтвержден, зайдите на почту. Аккаунт будет удален  
+                        в течении 30 дней, в случае отсутствия подтверждения!</p>"; 
+                    }
+                ?> 
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table class="New"> 
+        <tr><td>ID</td><td id="id_u"></td></tr> 
+        <tr><td>Логин</td><td><?php echo $username ?></td></tr> 
+        <tr><td>Электронная почта</td><td><?php echo $email ?></td></tr> 
+    </table>
+
+    <br>
+</body>
+</html>
